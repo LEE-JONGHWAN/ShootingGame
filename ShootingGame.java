@@ -39,7 +39,7 @@ public class ShootingGame extends JPanel implements ActionListener, KeyListener 
             System.out.println("이미지 로딩 실패: " + e.getMessage());
         }
 
-        player = new Player(500, 400);
+        player = new Player(500, 550);
         timer = new Timer(16, this);
         timer.start();
     }
@@ -158,7 +158,7 @@ public class ShootingGame extends JPanel implements ActionListener, KeyListener 
         if (isPaused) {
             g.setColor(Color.YELLOW);
             g.setFont(new Font("Arial", Font.BOLD, 40));
-            g.drawString("PAUSED", 230, 240);
+            g.drawString("PAUSED", 400, 240);
         }
     }
 
@@ -173,7 +173,7 @@ public class ShootingGame extends JPanel implements ActionListener, KeyListener 
             left = true;
         if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT)
             right = true;
-        if (code == KeyEvent.VK_K)
+        if (code == KeyEvent.VK_Z)
             bullets.add(new Bullet(player.x + 10, player.y));
         if (code == KeyEvent.VK_SPACE)
             isPaused = !isPaused;
